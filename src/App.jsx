@@ -144,6 +144,59 @@ export default function App() {
           </motion.div>
         </section>
 
+{/* REVIEWS */}
+<section id="reviews" className="bg-slate-50 py-20">
+  <div className="max-w-6xl mx-auto px-6">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="text-center mb-12"
+    >
+      <h2 className="text-3xl font-bold">What Our Students Say</h2>
+      <p className="mt-3 text-slate-600">Hear from students who learned to drive confidently with us.</p>
+    </motion.div>
+
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        {
+          name: "Phil Rees",
+          review: "It’s fair to say of all the instructors I have had, Leroy has been the best! He’s super calm and relaxed, and he focuses on ensuring you know what you need to know to pass your test. He’s also super flexible when it comes to lesson times/availability, which makes him a great option for learners of all ages and commitments. Of course, the proof is the in the pudding… I passed first time round with 0 faults, so leaving as one happy customer. Thank you so much Leroy!",
+        },
+        {
+          name: "Cesar Mansal",
+          review: "I am just over the moon for passing my driving test today (with only just one minor fault) with the help of Sir Lee (Leroy)! Throughout a time of having lessons with him, I can confidently say that he is the epitome of an exceptional driving instructor in Swindon. From the outset, Sir Lee displayed unparalleled expertise and a remarkable level of patience, both of which significantly contributed to the success of my driving test preparations. Additionally, based on my experience and my colleagues (who are also his students), Sir Lee expertly tailored each lesson to a student’s needs, addressing their strengths and weaknesses toward improving and excelling at driving. I highly recommend Mr. Leroy to anyone seeking a driving instructor in Swindon. If you're looking to pass your driving test and become a confident, skilled driver, Sir Lee is defo the driving instructor to choose! 💪",
+        },
+        {
+          name: "Hannah Ratcliffe",
+          review: "Leroy has been a fantastic driving instructor! I'd had a bad experience with my previous instructor and majorly lacked confidence on the roads. However, no matter how nervous I got and how many mistakes I made, Leroy always remained patient and reassuring. He never made me feel silly if I wanted to go over the same thing again and again, until it all finally clicked. He believed in me even when i didn't believe in myself and thanks to his excellent teaching, I managed to my pass my exam with just two small minors! I couldn't recommend his service enough and I genuinely enjoyed learning to drive with him.",
+        },
+      ].map((r, i) => (
+        <motion.div
+          key={i}
+          className="p-6 bg-white rounded-2xl shadow-md border border-slate-100"
+          whileHover={{ scale: 1.03 }}
+        >
+          {/* Star Rating */}
+          <div className="flex gap-1 mb-3">
+            <span className="text-yellow-400 text-lg">⭐</span>
+            <span className="text-yellow-400 text-lg">⭐</span>
+            <span className="text-yellow-400 text-lg">⭐</span>
+            <span className="text-yellow-400 text-lg">⭐</span>
+            <span className="text-yellow-400 text-lg">⭐</span>
+          </div>
+
+          <p className="text-slate-700">“{r.review}”</p>
+          <div className="mt-4 font-semibold text-red-600">— {r.name}</div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+
         {/* CONTACT */}
         <section id="contact" className="bg-gradient-to-b from-white to-slate-50">
           <div className="max-w-6xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
